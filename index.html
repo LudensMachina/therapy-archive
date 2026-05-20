@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapy Archive</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #eef6fb;
+      --card: rgba(255,255,255,0.72);
+      --border: rgba(170, 205, 230, 0.45);
+      --text: #2b3a42;
+      --subtext: #6f8593;
+      --accent: #8fbfdc;
+      --accent-light: #dceef8;
+      --shadow: 0 10px 30px rgba(120, 160, 190, 0.12);
+    }
+
+    body {
+      background: linear-gradient(to bottom, #f4faff, #e9f3fa);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      line-height: 1.7;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      margin-bottom: 70px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      color: #28404d;
+    }
+
+    .hero p {
+      color: var(--subtext);
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    .quote {
+      margin-top: 24px;
+      padding-left: 18px;
+      border-left: 3px solid var(--accent);
+      color: #5f7684;
+      font-style: italic;
+    }
+
+    .timeline-title {
+      font-size: 1.4rem;
+      margin-bottom: 28px;
+      color: #35505f;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid #cfe3ef;
+    }
+
+    .session {
+      position: relative;
+      margin-bottom: 42px;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .session::before {
+      content: "";
+      position: absolute;
+      left: -41px;
+      top: 36px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 4px solid #eef6fb;
+    }
+
+    .session-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .session-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2d4654;
+    }
+
+    .session-date {
+      color: var(--subtext);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: #567284;
+      letter-spacing: 0.5px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .info-card {
+      background: var(--accent-light);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+
+    .info-label {
+      font-size: 0.82rem;
+      color: #6e8796;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      color: #314956;
+      font-weight: 500;
+    }
+
+    .text-box {
+      background: rgba(255,255,255,0.55);
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid rgba(180, 210, 228, 0.35);
+      color: #3f5662;
+      margin-bottom: 14px;
+      white-space: pre-wrap;
+    }
+
+    .mood {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .mood-item {
+      background: #e1f0f8;
+      color: #4d6979;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+
+    .footer {
+      margin-top: 80px;
+      text-align: center;
+      color: #89a2b0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .session {
+        padding: 22px;
+      }
+
+      .timeline {
+        padding-left: 22px;
+      }
+
+      .session::before {
+        left: -33px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Therapy Archive</h1>
+
+      <p>
+        A quiet place to record therapy sessions,
+        emotional changes, and the slow process of understanding myself.
+      </p>
+
+      <div class="quote">
+        “Not to fix myself, but to understand myself.”
+      </div>
+    </section>
+
+    <h2 class="timeline-title">Timeline</h2>
+
+    <section class="timeline">
+
+      <!-- SESSION START -->
+      <article class="session">
+
+        <div class="session-header">
+          <div class="session-title">
+            Session 01
+          </div>
+
+          <div class="session-date">
+            2026.05.20
+          </div>
+        </div>
+
+        <!-- BASIC INFO -->
+        <div class="section">
+          <h3>Basic Information</h3>
+
+          <div class="info-grid">
+
+            <div class="info-card">
+              <div class="info-label">Duration</div>
+              <div class="info-value">90 mins</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-label">Format</div>
+              <div class="info-value">Online</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-label">Fee</div>
+              <div class="info-value">¥XXX</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-label">Meeting Link</div>
+              <div class="info-value">
+                https://example.com
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BEFORE -->
+        <div class="section">
+          <h3>Before Session</h3>
+
+          <div class="text-box">
+This week felt emotionally overwhelming.
+
+I kept thinking about anger, boundaries,
+and the fear of not being understood.
+          </div>
+
+          <div class="text-box">
+Most wanted to discuss:
+- Trauma response
+- Rage
+- Emotional exhaustion
+          </div>
+
+          <div class="mood">
+            <div class="mood-item">Anxiety 8/10</div>
+            <div class="mood-item">Anger 9/10</div>
+            <div class="mood-item">Fatigue 7/10</div>
+          </div>
+        </div>
+
+        <!-- AFTER -->
+        <div class="section">
+          <h3>After Session</h3>
+
+          <div class="text-box">
+We talked about how anger can become
+a protective response after repeated emotional violations.
+          </div>
+
+          <div class="text-box">
+Most touching sentence:
+
+“You do not need to justify your pain
+for it to deserve care.”
+          </div>
+
+          <div class="text-box">
+New realization:
+
+I am not only angry at individuals,
+but also at systems that failed to protect me.
+          </div>
+
+          <div class="mood">
+            <div class="mood-item">Relief 5/10</div>
+            <div class="mood-item">Exhaustion 8/10</div>
+            <div class="mood-item">Calmness 4/10</div>
+          </div>
+        </div>
+
+      </article>
+      <!-- SESSION END -->
+
+    </section>
+
+    <footer class="footer">
+      Built slowly, session by session.
+    </footer>
+
+  </div>
+
+</body>
+</html>
